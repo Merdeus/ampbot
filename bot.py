@@ -28,6 +28,7 @@ async def on_ready():
     print(f'{bot.user} has logged in!')
     await db.init_db()
     await db.add_history(f"Bot started and logged in as {bot.user}", None)
+    
     try:
         synced = await bot.tree.sync()
         print(f'Synced {len(synced)} command(s)')
